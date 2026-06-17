@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Game</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎮 Number Guess Game</h1>
+
+    <p class="range">
+        Guess a number between
+        <strong>{{ lowest }}</strong>
+        and
+        <strong>{{ highest }}</strong>
+    </p>
+
+    <p class="attempts">
+        Attempts: {{ attempts }}/{{ max_attempts }}
+    </p>
+
+    {% if message == "WIN" %}
+        <div class="win">
+            🎉 Congratulations! You Won!
+        </div>
+
+        <p class="secret">
+            Correct Number: {{ secret }}
+        </p>
+
+    {% elif message == "LOSE" %}
+        <div class="lose">
+            💀 Game Over! You Lost!
+        </div>
+
+        <p class="secret">
+            Correct Number: {{ secret }}
+        </p>
+    {% endif %}
+
+    {% if not game_over %}
+    <form method="POST">
+
+        <input
+            type="number"
+            name="guess"
+            placeholder="Enter your guess"
+            required
+        >
+
+        <button type="submit">
+            Submit Guess
+        </button>
+
+    </form>
+    {% endif %}
+
+    <div class="guess-history">
+
+        <h3>Your Guesses</h3>
+
+        {% if guesses %}
+            <p>
+                {% for guess in guesses %}
+                    {{ guess }}
+                {% endfor %}
+            </p>
+        {% else %}
+            <p>No guesses yet.</p>
+        {% endif %}
+
+    </div>
+
+    {% if feedback %}
+    <div class="feedback">
+        {{ feedback }}
+    </div>
+    {% endif %}
+
+    {% if game_over %}
+    <a href="/restart">
+        <button class="restart-btn">
+            🔄 Play Again
+        </button>
+    </a>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

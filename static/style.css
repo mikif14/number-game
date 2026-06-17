@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-top: 0;
+    color: #1e3c72;
+}
+
+.range {
+    color: #444;
+}
+
+.attempts {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 85%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2a5298;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+.win {
+    color: green;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.lose {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.secret {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.guess-history {
+    margin-top: 25px;
+}
+
+.guess-history h3 {
+    color: #1e3c72;
+}
+
+.guess-history p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2a5298
+}
+
+.restart-btn {
+    margin-top: 20px;
+    background: #2a5298;
+}
+
+.restart-btn:hover {
+    background: #2a5298;
+}
